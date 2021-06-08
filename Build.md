@@ -14,9 +14,6 @@
 ### Installing Operating systems
 - Install CentOS7 on Sensor
 - Install ESXi on VMHost
-  - Download a copy of ESXi from VMwares website (Requires a free login)
-  - Using Rufus, make the USB a bootable drive with ESXi ISO on it
-  - Plug bootable drive into VMHost server and install
 ### Creating Repo
 - Download CentOS7 Repo
 - Create CentOS7 VM on VMHost (25GB RAM, 50GB Storage)
