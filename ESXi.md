@@ -1,5 +1,4 @@
 # ESXI
-## Introduction
 
 Due to the prevalence of virtual machine usage in this build, a virtual machine hosting operating system is necessary.
 Of all of the virtual machine hosting solutions avaialble, ESXi from VMWare is by far the easiest to use and configure.
@@ -11,7 +10,8 @@ Installation, configuration and updating ESXi to properly function as a Master N
 ---
 
 ## Installation
-### Software Required: Rufus
+*Software Required: Rufus*
+
 Standardized installation of the virtual machine host will enable repeatable deployment with the Amber Cry system.  
 A standardized installation will also lead to more predictable performance and operator familiarity. 
 For this section you will need an external VGA capable monitor, a USB Keyboard, and a bootable USB drive imaged with ESXI installation media.
