@@ -4,7 +4,7 @@
 - Kibana
 - Arkime
 - PFSense
-- VMware ESXi
+- [VMware ESXi](https://github.com/dstaab34/24-AC/blob/main/ESXi.md)
 - Rufus
 - OpenOffice or Microsoft Suite
 - BitVise
