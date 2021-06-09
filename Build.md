@@ -10,7 +10,7 @@
 - BitVise
 - WinSCP
 ### Wiping existing configuration
-- Initialize Raid Config
+- [Click Here](https://github.com/dstaab34/24-AC/blob/main/WipeRaid.md) 
 ### Installing Operating systems
 - Install CentOS7 on Sensor
 - Install ESXi on VMHost
