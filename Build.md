@@ -13,7 +13,7 @@
 - [Click Here](https://github.com/dstaab34/24-AC/blob/main/WipeRaid.md) 
 ### Installing Operating systems
 - Install CentOS7 on Sensor
-- Install ESXi on VMHost
+- Install [ESXi](https://github.com/dstaab34/24-AC/blob/main/ESXi.md) on VMHost
 ### Creating Repo
 - Download CentOS7 Repo
 - Create CentOS7 VM on VMHost (25GB RAM, 50GB Storage)
