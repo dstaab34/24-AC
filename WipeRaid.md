@@ -70,3 +70,20 @@ you will be installing.
 32. Press CTRL+ALT+DELETE to complete reboot action
 > You have now configured the RAID level and assigned disks for the PERC H730 on the FC640 installed in chassis bay 1
 33.Repeat steps 1 through 19 for the FC640 installed in chassis bay 3
+34. Reboot
+
+POST REBOOT CONTINUING CONFIGURATION
+1. Press F10 to select Lifecycle Controller
+2. Select Configure Raid
+3. Select Dropdown and click PERC H730P
+4. Select Raid level, then select Next
+    -For ESXi, select Raid 50. 
+    -For CentOS, select Raid 0
+5. Click the checkbox to select all physical disks at the bottom. Leave the defaults, except span lenght. Select Next when done
+    -For ESXi, select 4
+    -For CentOS, no entry is required
+6. Name the VD Disk as follows: "VD_INTERNAL_R<RAID LEVEL>", leave all other defaults, select next when done
+    -example : "VD_INTERNAL_R50"
+7. Select Finish, then click Yes when prompted to continue. 
+8. Select Exit, then click Yes to reboot.
+   
