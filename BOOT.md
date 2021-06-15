@@ -43,3 +43,4 @@ FOR CENTOS
     + Default Gateway: 10.1.X.1
 7. Select Done, then Begin Installation. During installation, set root password, and set user with username of "gucci" and same password as root password. Make gucci administrator.
 8. Remove USB, then reboot
+9. Post Reboot, accept the License Agreement, then click Finish Configuration
