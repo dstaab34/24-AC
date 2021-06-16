@@ -35,7 +35,7 @@ NEXT, We will boot it and configure it.
 13. At the initial set up, leave defaults on first two screens, turn off location services and skip connecting online accounts. 
 
 NEXT, we will connect a repository and download CentOS packages and Elastic. 
-1. From infrastructure laptop, open up WinSCP and open a connection to the device you are configuring. Drag and drop localrepo.repos from desktop directory on infrastructure laptop into the home directory of the Elastic VM, then close out the WinSCP Connection
+1. From infrastructure laptop, open up WinSCP and open a connection to the device you are configuring with 'gucci' credentials. Drag and drop localrepo.repos from desktop directory on infrastructure laptop into the home directory of the Elastic VM, then close out the WinSCP Connection
 2. Back in the VM, switch to super user (sudo su). IN the next few steps, run the commands as they appear in the steps
 3. ping 10.1.7.30 (to ensure connectivity to the repository)
 4. cd /etc
