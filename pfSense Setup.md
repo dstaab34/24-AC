@@ -49,8 +49,8 @@ Next, we will create the pfSense VM, boot, and configure it.
   - Hard disk 1: 250GB
   - Click the arrow next to "Hard disk 1" and make sure "Thin Provisioning" is checked. THIS IS CRUCIAL
   - Network Adapter 1: VM Network
-  - Network Adapter 2: PF to Customer
-  - Network Adapter 3: PF to SBO
+  - Network Adapter 2: PF to SBO
+  - Network Adapter 3: PF to Customer 
   - When you get to CD/DVD Drive one, select "Datastore ISO File", then navigate to TOOLS_DATASTORE > ISO and click on the pfSense image.
 10. Click next, verify your presets, then click finish.
 11. Click on the pfSense VM, then click the play button to open up a window of the pfSense Virtual Machine
@@ -93,4 +93,10 @@ NEXT We will follow BOOT Procedures for the pfSense, then configure it.
 35. click next
 36. click reload
 37. click Finish
-38. you have successfully completed setup configuration for pfSense
+38. Once finished, select the drop down next to Firewall at the top and select rules. 
+39. Select LAN, then click on the second rule in the list
+40. Click the add button with the arrow pointed up, leave the defaults in the first section, in the "source" section, select "LAN Net"
+41. Select "LAN net" in the destination section, and for the destination port range, leave the "From" selection as "other" and type in 9200. Do the same in the "To" section, but type in "9305". Then click "Save"
+42. Repeat twice, only changes are in the "Destination" section for ports, on the first instance, type in "8005" in the first port range box and leave the second empty, and for the second rule, type in "5601" in the first port range box and leave the second empty. 
+43. Near the top, click on "Apply Changes"
+44. you have successfully completed setup configuration for pfSense
