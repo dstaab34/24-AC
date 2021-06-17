@@ -25,11 +25,14 @@ NEXT, we will upload ISO files to the TOOLS_DATASTORE
 4. Select the ISO folder, then select "Upload"
 5. Upload CentOS 7 (DVD) and pfSense images from C:\Users\Exotic\Desktop\Images, when finished, hit the "close" button.
 
-NEXT, we will create portgroups
+NEXT, we will create virtual switches and portgroups
 1. Navigate to the Networking tab on the lefthand side of the window. 
-2. Click Port groups, then click "Add port group"
-3. In the name, name it "PF to SBO" then click "Add"
-4. Repeat for a port group named "PF to Customer"
+2. Click Virtual Switches, then click "Add virtual switch"
+3. Name it "PF and SBO", set the uplink to vmnic3, and leave the other settings as default. Then click "add"
+4. Make another one following the same steps. Name it "PF and Customer" and assign the uplink to vmnic1 and then click "add"
+5. Click Port groups, then click "Add port group"
+6. In the name, name it "PF to SBO", set the vSwitch to "PF and SBO", then click "Add"
+7. Repeat for a port group named "PF to Customer", changing the vSwitch to "PF and Customer"
 
 Next, we will create the pfSense VM, boot, and configure it. 
 1. Select the Virtual Machines tab on the lefthand side of the window.
@@ -60,8 +63,8 @@ NEXT We will follow BOOT Procedures for the pfSense, then configure it.
 5. When installation finishes, highlight "No" and hit Enter
 6. Select "Reboot" and hit Enter
 7. After reboot, when prompted if VLANS should be set up, type "n" and hit Enter
-8. Type in "vmx0" for the WAN interface and hit Enter
-9. Type in "vmx1" for the LAN interface and hit Enter
+8. Type in "vmx1" for the WAN interface and hit Enter
+9. Type in "vmx0" for the LAN interface and hit Enter
 10. when prompted for the Optional interface, don't type anything, just hit Enter
 11. Type "y" when asked if you want to proceed, then hit Enter
 12. When configuration finishes, type "2" then hit Enter to Set Interfaces IP Addresses
