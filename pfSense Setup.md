@@ -97,6 +97,6 @@ NEXT We will follow BOOT Procedures for the pfSense, then configure it.
 39. Select LAN, then click on the second rule in the list
 40. Click the add button with the arrow pointed up, leave the defaults in the first section, in the "source" section, select "LAN Net"
 41. Select "LAN net" in the destination section, and for the destination port range, leave the "From" selection as "other" and type in 9200. Do the same in the "To" section, but type in "9305". Then click "Save"
-42. Repeat twice, only changes are in the "Destination" section for ports, on the first instance, type in "8005" in the first port range box and leave the second empty, and for the second rule, type in "5601" in the first port range box and leave the second empty. 
+42. Repeat three times, only changes are in the "Destination" section for ports, on the first instance, type in "8005" in the first port range box and type "8009" in the second, and for the second rule, type in "5601" in the first port range box and leave the second empty, and for the third, type in "8200" in the first port range box and leave the second empty. 
 43. Near the top, click on "Apply Changes"
 44. you have successfully completed setup configuration for pfSense
