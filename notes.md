@@ -4,3 +4,5 @@ firewall-cmd --reload
 $ curl -XGET 'localhost:9200/_cluster/health?pretty'
 
 /data/moloch/bin/node addUser.js -c ../etc/config.ini admin "Admin" admin -admin
+
+/data/moloch/bin/moloch-capture -r <_pcap file_> (moloch tcp replay command) 
