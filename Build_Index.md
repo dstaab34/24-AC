@@ -9,6 +9,9 @@
 - OpenOffice or Microsoft Suite
 - BitVise
 - WinSCP
+## Network Map
+![alt text](AmberCryNetmap.png)
+## Build SOPs
 ### Wiping existing configuration
 - [Click Here](https://github.com/dstaab34/24-AC/blob/main/WipeRaid.md) 
 ### Installing Operating systems
@@ -38,3 +41,5 @@
   - IP to Geolocation file and oui.txt (Touch file with correct name)
   - Config.ini
     - Set directory to store PCAP, Change PCAP read method to TPACKETV3 and High Performance Settings
+### PFSense
+- [Click Here](pfsense.md)
