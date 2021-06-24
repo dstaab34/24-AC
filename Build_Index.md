@@ -20,7 +20,7 @@
 - Set up Repo on VMHost
 - Set up Repo on Clients
 ### Elastic
-## [Detailed Instructions](https://github.com/dstaab34/24-AC/blob/main/Elastic_Setup.md)
+### [Detailed Instructions](https://github.com/dstaab34/24-AC/blob/main/Elastic_Setup.md)
 - Download Elastic RPM
 - Install RPM on as many VMs as you think you need (odd #)(64GB RAM, 31GB Heap)
   - Storage for each node is generally the amount of PCAP you can store divided by 10 but can be more
@@ -32,6 +32,7 @@
   - Check to see if IPTables is preventing this
 - Download Kibana on one of the elastic nodes
 ### Moloch (Arkime)
+### [Detailed Instructions](https://github.com/dstaab34/24-AC/blob/main/MOLOCH.md)
 - Install Moloch on Sensor
 - Configure Moloch
   - IP to Geolocation file and oui.txt (Touch file with correct name)
