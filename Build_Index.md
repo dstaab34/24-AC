@@ -20,6 +20,7 @@
 - Set up Repo on VMHost
 - Set up Repo on Clients
 ### Elastic
+- [Detailed Instructions](https://github.com/dstaab34/24-AC/blob/main/Elastic Setup.md)
 - Download Elastic RPM
 - Install RPM on as many VMs as you think you need (odd #)(64GB RAM, 31GB Heap)
   - Storage for each node is generally the amount of PCAP you can store divided by 10 but can be more
