@@ -5,7 +5,7 @@ Network Information:
   Analysts will operate on the 10.1.9.x network, and IT administration will operate on 10.1.5.x
   Each kit has remote management capabilities under the same IP Schema. You can remotely manage the Chassis and the individual blades. Chassis Management Console(CMC)'s IP is always 10.1.x.2, where x reflects the kit subnet as above. Blade 1's integrated Dell Remote Access Console(iDRAC) is always 10.1.x.3 and Blade 2's iDRAC is always 10.1.x.4
   ESXi will always be reachable via http://10.1.x.10
-  Moloch will always be reachable via http://10.1.x.20:8005
+  Moloch Viewer will always be reachable via http://10.1.x.20:8005
   Moloch has an extra interface for capture. It's IP is 10.1.x.21
   Kibana will always be reachable via http://10.1.x.11:5601
   Unless explicitly specified, the login passwords will always be 'Br111ckSquad!!!'
@@ -57,5 +57,16 @@ Power On and Startup Steps:
     22. Scroll to the bottom of the page once logged in. On the right side of the web page will be a thumbnail underneath a title that says "Virtual Console". Click on the thumbnail.
     23. The boot process for Blade 2 should be complete by now. If not, wait for it to complete. When it is complete, there will be a login prompt for the user "gucci", or a blue screen with the time on it. Log in with the password set above. If the blue screen is what you see, click and drag upwards to get to the login prompt. If the screen is green and says "No Input", try to wake the server be clicking on the screen. If it doesn't work, contact someone with an Infrastructure JQR for help.
     24. Right click on the Blade 2 desktop after logging in, and select "open terminal"
-    25. Verify the Elastic Cluster is up and running by running the command "sudo curl -XGET 'http://10.1.x.11:9200/cluster/health?pretty'". (there is an underscore before the "cluster" in the command) The output should have the word "green" next to the status. If not, contact someone with an infrastructure JQR for help.
-    26. 
+    25. Verify the Elastic Cluster is up and running by running the command "sudo curl -XGET 'http://10.1.x.11:9200/_cluster/health?pretty'". (there is an underscore before the "cluster" in the command) The output should have the word "green" next to the status. If not, contact someone with an infrastructure JQR for help. When using the "sudo" command, use the password set above when prompted.
+    26. After verifying the cluster is up, type in "sudo systemctl start molochcapture", wait a moment, then type in "sudo systemctl start molochviewer".
+    27. Verify both services are running by typing "systemctl status molochcapture" and "systemctl status molochviewer". Verify the output says "Active" and/or "Running". If both are running, close out of the iDRAC console window. If not, contact someone with an infrastructure JQR for help. 
+    28. To verify Moloch is working, type in the Google Chrome Browser the Moloch Viewer IP(specified above). Ensure you type in the port "8005" to reach the viewer. Even if you don't see data, if you have a web page, you have completed the Power on and Startup. Default credentials are "admin" for both username and password.
+    
+
+POWER OFF STEPS:
+    1. Log into ESXi the same as before. Select all of the VM's as if you were to power them on, but this time, select "Power Off Virtual Machines".
+    2. Wait for that to complete, then log into the CMC by navigating back the CMC IP(specified above), and select the server for Blade 1 as if you were to power it on. 
+    3. Go to power, then select control, then select the radio button next to "Power Off", then click apply. Select "yes" when asked if you want to execute a server control action.
+    4. Repeat step 3. for Blade 2. 
+    5. Select "Chassis Overview" at the top of the page, then select "Power" and select "Control". Then select the radio button next to "Power Off", then click apply. Select "yes" when asked if you want to execute a server control action.
+    6. When fans stop spinning loudly, the kit is powered off. Unplug all cabling and store the Chassis and Blades in their corresponding pelican cases. 
