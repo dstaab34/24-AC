@@ -84,7 +84,7 @@ Power On and Startup Steps:
     
     20. In the same terminal session, type in "systemctl status kibana" and verify the output says "Active" and/or "Running". If both are running, close out of the Virtual Machine and continue. If not, contact someone with an infrastructure JQR for help.
     
-    21. Navigate the the Blade 2 iDRAC IP(specified above). Log in with the user of 'root' and the password set above.
+    21. Navigate the the Blade 2 iDRAC IP(specified above). Log in with the user of 'root' and the password 'Br111ckSquad!!!'.
     
     22. Scroll to the bottom of the page once logged in. On the right side of the web page will be a thumbnail underneath a title that says "Virtual Console". Click on the thumbnail, even if it says "No Signal".
     
