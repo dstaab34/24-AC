@@ -21,6 +21,7 @@ Required Components:
   - All assosciated power cables and surge protectors
   
 Background Information:
+
  a) This next section is important to understand for context in the following steps. It is important to ensure that the kit blades go to the matching kit chassis, e.g. Kit 1 Blades to Kit 1 Chassis. You can tell using the serial numbers on the kit blades and chassis. For example the serials starting with 'ID9K' on both chassis and blades are the correct ones. The blades ending with '01' and '02' are kit 1 and go to the chassis ending in '01' as well. Kit 2 blades are '03' and '04' and go to the chassis ending in '02'. Kit 3 blades are '05' and '06' and go to the chassis ending in '03'. They will not network correctly if plugged in wrong. 
  
  b) On the Chassis, the serial number is located on the lefthand side. On the Blades, the serial is located on the top of the blade, towards the front. 
@@ -42,6 +43,7 @@ Background Information:
   Moloch Services will not run until Elastic Search services are up and running on each node. These nodes reside on ESXi(this is a hypervisor operating system) as Virtual Machines, 
   
 Power On and Startup Steps:
+
     1. Begin by pulling the designating where you have enough space and convenience to set up the AmberCry Kit. There needs to be a nearby powersource to plug in a surge protector.
     
     2. Pull out the Chassis from the pelican case. Verify the serial number and place the chassis where you want to set it up.  On the chassis, there are arms on the left and right sides inside the blade slots that need to be slid out before installing the blades. They slide out much like dresser drawer rails. There is an upside-down 'L' shaped tab above each arm that needs to be pushed up to slide those arms out.
