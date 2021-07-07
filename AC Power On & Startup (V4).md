@@ -97,6 +97,21 @@ Power On and Startup Steps:
     
     28. To verify Moloch is working, type into a Google Chrome Browser "http://10.1.x.20:8005". Ensure you type in the port "8005" to reach the viewer. Even if you don't see data, if you have a web page, you have completed the Power on and Startup. Default credentials are "admin" for both username and password.
     
+    **ONLY FOR KIT 2, THE MOLOCH MASTER KIT**
+    It is necessary to run the following commands to ensure that Moloch can work together with the other kits. 
+    
+    29. Repeat steps 23 and 24 to log back into the Blade 2 Desktop and open a terminal.
+    
+    30. Type in "cd /data/moloch/viewer" and press enter
+    
+    31. Type in "sudo /data/moloch/bin/node multies.js -n multi-viewer" and press enter to let that run. As before, use the password 'Br111ckSquad!!!' when prompted.
+    
+    32. Right click on the desktop and open a new terminal session. Then type in "cd /data/moloch/viewer" and press enter.
+    
+    33. Type in "sudo /data/moloch/bin/node viewer.js -n multi-viewer" and press enter. Leave both terminal sessions open.
+    
+    34. To verify that the Multi-Viewer service is working, close out of the Blade 2 Desktop and type into a Google Chrome Browser "http://10.1.7.20:8009". If you connect and see data, everything is working correctly. 
+    
 
 POWER OFF STEPS:
     
