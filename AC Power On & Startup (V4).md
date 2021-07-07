@@ -108,9 +108,9 @@ Power On and Startup Steps:
     
     32. Right click on the desktop and open a new terminal session. Then type in "cd /data/moloch/viewer" and press enter.
     
-    33. Type in "sudo /data/moloch/bin/node viewer.js -n multi-viewer" and press enter. Leave both terminal sessions open.
+    33. Type in "sudo /data/moloch/bin/node viewer.js -n multi-viewer" and press enter. As before, use the password 'Br111ckSquad!!!' when prompted. Leave both terminal sessions open.
     
-    34. To verify that the Multi-Viewer service is working, close out of the Blade 2 Desktop and type into a Google Chrome Browser "http://10.1.7.20:8009". If you connect and see data, everything is working correctly. 
+    34. To verify that the Multi-Viewer service is working, close out of the Blade 2 Desktop and type into a Google Chrome Browser "http://10.1.7.20:8009". If you connect and see data, everything is working correctly. Default credentials are "admin" for both username and password.
     
 
 POWER OFF STEPS:
