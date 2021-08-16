@@ -56,7 +56,7 @@ NEXT, we will connect a repository and download CentOS packages and Elastic.
   - set the cluster name (this can be whatever you want)
   - set node name "node.name: nodex" where 'x' is the node number
   - set node attributes under the line "#node.attr.rack: r1" as follows:
-    + node.master: true (only for the first node. other nodes set to false)
+    + node.master: true (only for three of the nodes. other nodes set to false)
     + node.data: true
   - set network.host: 10.1.X.1x (e.g. network.host: 10.1.6.11)(ip of the VM)
   - set transport.port underneath line "For more information..." in network portion. Set it starting at 9300 with node1, incrementing by one for each node. (e.g. transport.port: 9300)
