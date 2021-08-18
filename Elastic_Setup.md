@@ -61,7 +61,7 @@ NEXT, we will connect a repository and download CentOS packages and Elastic.
   - set network.host: 10.1.X.1x (e.g. network.host: 10.1.6.11)(ip of the VM)
   - set transport.port underneath line "For more information..." in network portion. Set it starting at 9300 with node1, incrementing by one for each node. (e.g. transport.port: 9300)
   - set the discovery seed hosts. discovery seed hosts will be the other nodes and their transport ports for this cluster. each line should be written with four spaces, then a hyphen, then another space. (e.g.    - 10.1.6.11:9300) enter a new line after entering each host
-  - set cluster initial master nodes. this should just be the first node (e.g. cluster.initial_master_nodes: node1)
+  - set cluster initial master nodes. this should be set to the values of all the master nodes set above. (e.g. cluster.initial_master_nodes: node1)
   - AT THE BOTTOM OF THE FILE, WRITE IN TWO LINES EXACTLY AS FOLLOWS
             #Shard limit for the entire node:
             cluster.routing.allocation.total_shards_per_node: 100
@@ -81,7 +81,7 @@ NEXT, we will connect a repository and download CentOS packages and Elastic.
 28. firewall-cmd --add-port=9304/tcp --permanent
 29. systemctl status elasticsearch (to verify it is green and running)
 
-FOR KIBANA, THIS SHOULD ONLY BE DONE ON THE MASTER NODE
+FOR KIBANA, THIS SHOULD ONLY BE DONE ON THE FIRST NODE, DO NOT RUN AS ROOT OR SUPER USER
 1. rpm --install "http://10.1.7.30/repos/kit/kibana-7.10.2-x86_64.rpm"
 2. cd /etc/kibana
 3. vim kibana.yml (uncomment any edited lines)
