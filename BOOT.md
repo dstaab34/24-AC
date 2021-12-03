@@ -32,12 +32,12 @@ FOR CENTOS
 3. For Installation Destination, select "DELL PERC H730P" and leave "Automatically configure Partitioning" selected.
 4. For Software selection, select "Server with GUI" and leave defaults.
 5. For Network & Hostname:
-  - set hostname to "gucci.molochX"
+  - set hostname to "splunking.kitx"
   - configure em1, in general tab, select always connect when evailable. in Ipv4, set method to manual, configure IP address as follows:
     + IPv4: 10.1.X.20
     + Netmask: 255.255.0.0
     + Default Gateway: 10.1.X.1
-  - configure em3, in general tab, select always connect when evailable. in Ipv4, set method to manual, configure IP address as follows:
+  - configure em2, in general tab, select always connect when evailable. in Ipv4, set method to manual, configure IP address as follows:
     + IPv4: 10.1.X.21
     + Netmask: 255.255.0.0
     + Default Gateway: 10.1.X.1
