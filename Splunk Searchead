@@ -1,4 +1,5 @@
 STARTING FROM ESXi TO CREATE A VM FOR EACH ELASTIC NODE. REPEAT THE STEPS FOUR MORE TIMES TO CREATE YOUR CLUSTER
+
 1. On the Virtual Machines tab, click "Create/Register VM"
 2. Select "Create a new virtual machine", then click next
 3. Enter in the name "nodex- .1x" where 'x' is the node number, leave the compatibility tab default. (e.g. node1- .11)
@@ -7,8 +8,8 @@ STARTING FROM ESXi TO CREATE A VM FOR EACH ELASTIC NODE. REPEAT THE STEPS FOUR M
 6. Select "VIRTUAL_MACHINE_DATASTORE". DO NOT SELECT ANY OTHER DATASTORE TO STORE ANY VIRTUAL MACHINE ON
 7. Select next, then under customize settings in the "Virtual Hardware" Tab, click "Add network adapter" twice.
 8. Ensure the configuration matches the following(if not specified, leave the defaults):
-  - CPU: 12
-  - Memory: 64GB
+  - CPU: 64
+  - Memory: 256GB
   - Hard disk 1: 4TB
   - Click the arrow next to "Hard disk 1" and make sure "Thin Provisioning" is checked. THIS IS CRUCIAL
   - Network Adapter 1: VM Network
