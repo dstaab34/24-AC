@@ -16,3 +16,4 @@ CONTINUING FROM BOOT.md CENTOS INSTRUCTIONS
 14. yum repo-pkgs local-extras install --skip-broken (if prompted, press 'y')
 15. yum repo-pkgs local-updates install --skip-broken (if prompted, press 'y')
 16. yum repo-pkgs local-centosplus install --skip-broken (if prompted, press 'y')
+17. Once complete here, use winscp and the external drive with a serial of "wxh1e658t2vy" and download all .rpm files that have to do with zeek, splunk, and suricata.
