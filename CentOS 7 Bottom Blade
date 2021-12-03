@@ -1,0 +1,18 @@
+CONTINUING FROM BOOT.md CENTOS INSTRUCTIONS
+
+1. During initial setup, click next, then click next, then turn off location services and click next, then click skip.
+2. From infrastructure laptop, open up WinSCP and open a connection to the device you are configuring with 'gucci' credentials. Drag and drop localrepo.repos from desktop directory on infrastructure laptop into the home directory of the Moloch Server, then close out the WinSCP Connection
+3. Back in the iDrac console of the Moloch Server,Open up a terminal session by right clicking and selecting "open terminal"
+4. switch to super user (sudo su). IN the next few steps, run the commands as they appear in the steps
+5. ping 10.1.7.30 (to ensure connectivity to the repository)
+6. cd /etc
+7. mkdir yum.repos.old
+8. mv yum.repos.d/* yum.repos.old/
+9. mv /home/gucci/localrepo.repo yum.repos.d/
+10. ls yum.repos.old (to verify the old repos moved over)
+11. ls yum.repos.d (to verify the only thing in there is localrepo.repo)
+12. yum-config-manager --save --setopt=local-kit.skip_if_unavailable=true
+13. yum repo-pkgs local-base install --skip-broken (if prompted, press 'y')
+14. yum repo-pkgs local-extras install --skip-broken (if prompted, press 'y')
+15. yum repo-pkgs local-updates install --skip-broken (if prompted, press 'y')
+16. yum repo-pkgs local-centosplus install --skip-broken (if prompted, press 'y')
