@@ -5,8 +5,8 @@ cd /opt/splunkforwarder/bin
 ./splunk start --accept-license
 **set administrator username as admin
 **set administrator password as Br111ckSquad!!!
-./splunk add forward-server 10.1.6.50:8000
-./splunk add forward-server 10.1.8.50:8000
+./splunk add forward-server 10.1.6.50:9997
+./splunk add forward-server 10.1.8.50:9997
 **you will enter a config script, when prompted for the following, enter as designated**
   Splunk username: admin
   Password: Br111ckSquad!!!
@@ -45,6 +45,14 @@ vim inputs.conf
   :%s/\<nsm\>/opt/
   :wq!
 
+cd /opt/splunkuniversalforwarder/etc/apps/TA-suricata-4/
+cp default/inputs.conf local/
+vim local/inputs.conf
+**delete the host line and add the following line at the bottom**  
+  disabled = 0
+  :wq!
+  
+setfacl -Rm u:splunk:r-x /opt/zeek && setfacl -Rm d:splunk:r-x /opt/zeek
 
 
 firewall-cmd --add-port 9997/tcp --permanent
