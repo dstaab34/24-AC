@@ -1,1 +1,16 @@
+On the splunking blade, after downloading the UF rpm, open a terminal and run the following commands:
+cd /home/gucci
+rpm --install splunkforwarder-8.2.3-cd0848707637-linux-2.6-x86_64.rpm
+cd /opt/splunkforwarder/bin
+./splunk start --accept-license
+**set administrator username as admin
+**set administrator password as Br111ckSquad!!!
+./splunk add forward-server 10.1.6.50:8000
+./splunk add forward-server 10.1.8.50:8000
+**you will enter a config script, when prompted for the following, enter as designated**
+  Splunk username: admin
+  Password: Br111ckSquad!!!
+  
+
+
 /opt/splunkforwarder/bin
