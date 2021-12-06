@@ -47,4 +47,6 @@ vim ../share/zeek/site/local.zeek
   @load policy/tuning/json-logs.zeek
   :wq!
 
-@load policy/tuning/json-logs.zeek
+adduser zeek -g zeek
+cd /opt
+chown -R zeek:zeek zeek
