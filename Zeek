@@ -51,6 +51,7 @@ adduser zeek -g zeek
 cd /opt
 chown -R zeek:zeek zeek
 cd /usr/bin
-ln -s zeekctl /opt/zeek/bin ./zeekctl
-ln -s /usr/bin/zeekctl /opt/zeek/bin /./zeekctl
+mkdir zeekctl
 ln -s /opt/zeek/bin ./zeekctl /usr/bin/zeekctl
+cd /opt/zeek/bin
+./zkg install zeek-af_packet-plugin
