@@ -10,7 +10,45 @@ cd /opt/splunkforwarder/bin
 **you will enter a config script, when prompted for the following, enter as designated**
   Splunk username: admin
   Password: Br111ckSquad!!!
-  
+cd /opt/splunkforwarder
+tar -xvf /home/gucci/splunk-add-on-for-microsoft-sysmon_1062.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/splunk-add-on-for-microsoft-windows_820.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/splunk-add-on-for-unix-and-linux.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/splunk-add-on-for-zeek-aka-bro.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/apt_falconer_1.2.4beta.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/splunk_cpt_package.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/cyberchef-for-splunk_103.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/ta-for-suricata_234.tgz -C /opt/splunkforwarder/etc/apps/
+tar -xvf /home/gucci/zeek_app_inputs.tar.gz -C /opt/splunkforwarder/etc/apps/
+cd etc/apps/SplunkUniversalForwarder
+mkdir local
+chown splunk:splunk local/*
+cp default/inputs.conf local/
+cp default/outputs.conf local/
+vim local/inputs.conf
+** comment out everything**
+vim local/outputs.conf
+**delete all, input the following**
+  [tcpout:splunkenterprise.kit1]
+  server = 10.1.6.20:9997
+  [tcpout:splunkeneterpise.kit3]
+  server = 10.1.8.50:9997
+  :wq!
+cd etc/apps/Splunk_TA_nix
+mkdir local
+chown splunk:splunk local/*
+cp default/inputs.conf local/
+cp ../SplunkUniversalForwarder/local/outputs.conf local/
+cd ../zeek_app_inputs/default
+vim inputs.conf
+  **in vim, run the following to edit the file**
+  :%s/\<nsm\>/opt/
+  :wq!
 
+
+
+firewall-cmd --add-port 9997/tcp --permanent
+firewall-cmd --add-port 8089/tcp --permanent
+firewall-cmd --complete-reload
 
 /opt/splunkforwarder/bin
