@@ -38,3 +38,13 @@ vim /opt/zeek/etc/node.cfg
  install
  deploy
  **if it worked, enter the stop command and exit zeekctl shell. from now on run /opt/zeek/bin/zeekctl <command> to deploy, start, or stop zeek. **
+ 
+cd /opt/zeek/bin 
+./zeekctl stop
+vim ../share/zeek/site/local.zeek
+** at the bottom of the file, input the following **
+  #Output to JSON
+  @load policy/tuning/json-logs.zeek
+  :wq!
+
+@load policy/tuning/json-logs.zeek
