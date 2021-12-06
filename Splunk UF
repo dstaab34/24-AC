@@ -54,8 +54,9 @@ vim local/inputs.conf
   
 setfacl -Rm u:splunk:r-x /opt/zeek && setfacl -Rm d:splunk:r-x /opt/zeek
 
+mkdir /usr/bin/splunk
 ln -s /opt/splunkforwarder/bin ./splunk /usr/bin/splunk
-ln -s /opt/splunkfowarder/bin/splunk /usr/bin/splunk
+
 
 
 firewall-cmd --add-port 9997/tcp --permanent
