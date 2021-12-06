@@ -1,1 +1,40 @@
-opt/zeek/bin
+To install zeek you will need an internet connection to the kit. open a terminal and follow the below steps. Run the following commands in the terminal sesson:
+sudo su
+yum install epel-release -y
+yum installpython3-Gitpython pip3 pip-python libmaxminddb sendmail curl gperftools jemalloc PF_RING krb5 ipsumpdump curl git ntp chromium 
+yum install centos-release-scl-rh
+yum --enablerepo==centos-sclo-rh-resting install devtoolset-7
+yum update 
+yum upgrade
+yum install cmake3 
+scl enable devtoolset-7 bash
+pip3 install cmake
+pip3 install gitpython semantic-version
+pip3 install zkg
+pip3 install git+git://github.com/zeek/package-manager@master 
+cd /etc/yum.repos.d/
+wget https://download.opensuse.org/repositories/security:zeek/CentOS_7/security:zeek.repo
+yum install zeek
+
+**Next you have to use a text editor like vim or gedit to edit a few files. Instructions on editing are below. i used vim**
+vim /opt/zeek/etc/networks.cfg
+  :set number
+  *go to line 8 and input the following:
+  10.1.6.0/16     Kit 1
+  10.1.7.0/16     Kit 2
+  10.1.8.0/16     Kit 3
+  *save and exit with :wq!
+  
+vim /opt/zeek/etc/node.cfg
+  :set number
+  *edit line 10 to be 10.1.x.20 where x is the kit subnet
+  *edit line 11 to be em2
+  :wq!
+  
+ **return to entering commands in the terminal**
+ cd /opt/zeek/bin
+ ./zeekctl
+ **you will enter a zeekcontrol shell, continue to enter the following commands*
+ install
+ deploy
+ **if it worked, enter the stop command and exit zeekctl shell. from now on run /opt/zeek/bin/zeekctl <command> to deploy, start, or stop zeek. **
