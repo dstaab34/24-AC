@@ -2,14 +2,14 @@ STARTING FROM ESXi TO CREATE A VM FOR EACH ELASTIC NODE. REPEAT THE STEPS FOUR M
 
 1. On the Virtual Machines tab, click "Create/Register VM"
 2. Select "Create a new virtual machine", then click next
-3. Enter in the name "nodex- .1x" where 'x' is the node number, leave the compatibility tab default. (e.g. node1- .11)
+3. Enter in the name "Splunk - .50, leave the compatibility tab default. 
 4. Select Guest OS Family as "Linux"
 5. Select Guest OS Version as "CentOS 7 (64-bit)", then click next
 6. Select "VIRTUAL_MACHINE_DATASTORE". DO NOT SELECT ANY OTHER DATASTORE TO STORE ANY VIRTUAL MACHINE ON
 7. Select next, then under customize settings in the "Virtual Hardware" Tab, click "Add network adapter" twice.
 8. Ensure the configuration matches the following(if not specified, leave the defaults):
   - CPU: 64
-  - Memory: 256GB
+  - Memory: 128B
   - Hard disk 1: 4TB
   - Click the arrow next to "Hard disk 1" and make sure "Thin Provisioning" is checked. THIS IS CRUCIAL
   - Network Adapter 1: VM Network
@@ -22,11 +22,11 @@ NEXT, We will boot it and configure it.
 2. At the Installation Menu, select English (United States) and click continue
 3. At software selection, select "Server with GUI"
 4. At installation destination, ensure "VMWare Virtual disk" is selected, as well as "Automatically configure partitioning"
-5. At network and Hostname, change hostname to "nodex.kitX" where 'x' is node number and 'X' is kit number (e.g. node2.kit3). then click apply.
+5. At network and Hostname, change hostname to "splunkenterprise.kitX" where 'X' is kit number (e.g. splunkenterprise.kit3). then click apply.
 6. still in network and hostname, select ens192 and click configure
 7. Under the General tab, check "Automatically connect to this network when it is available"
 8. Under IPv4 settings, change method to manual, and assign the address as follows:
-  - Address: 10.1.X.1x where 'X' is the kit subnet and 'x' is the node number (e.g. 10.1.6.11)
+  - Address: 10.1.X.50 where 'X' is the kit subnet.(e.g. 10.1.6.50)
   - Netmask: 255.255.0.0
   - Gateway: 10.1.X.1 where 'X' is the kit subnet (e.g. 10.1.6.1)
 9. Click save, ensure ens192 is connected and on, then click done.
@@ -50,3 +50,5 @@ NEXT, we will connect a repository and download CentOS packages and Elastic.
 12. yum repo-pkgs local-extras install --skip-broken (if prompted, press 'y')
 13. yum repo-pkgs local-updates install --skip-broken (if prompted, press 'y')
 14. yum repo-pkgs local-centosplus install --skip-broken (if prompted, press 'y')
+
+
