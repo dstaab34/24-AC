@@ -1,4 +1,12 @@
 ** Below are the commands you need to run in a terminal to download and start suricata on the splunking server. you will need internet connectivity to the blade. run the below as root**
+**download suricata rpm to opt**
+
 yum install epel-release yum-plugin-copr
 yum copr enable @oisf/suricata-6.0
-
+./configure | grep yum
+*yum install whatever the grep command returns*
+pip3 install pyyaml
+./configure
+make install-full
+*edit the suricata.yaml file to have the interfaces you want to collect on. search for memcap until you get to stream section, replace value with 256mb*
+/usr/bin/suricta -c /etc/suricata/suricata.yaml -i em2
