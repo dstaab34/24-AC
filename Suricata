@@ -1,17 +1,4 @@
 ** Below are the commands you need to run in a terminal to download and start suricata on the splunking server. you will need internet connectivity to the blade. run the below as root**
 yum install epel-release yum-plugin-copr
 yum copr enable @oisf/suricata-6.0
-yum install suricata
-cd /etc/suricata
-cp suricata.yaml suricataOG.yaml
-chown suricata:suricata *
-chmod 755 *
-vim surcata.yaml
-** within suricata.yaml, enter ":set number" to see lines and edit the following lines:**
-  *line 15* HOME_NET: "[10.1.x.20]" (x is the kit subnet)
-  *line 581* - interface : em2
-  *line 661*  - interface : em2
-  :wq!
-Suricata should now be configured
 
-systemctl start suricata
