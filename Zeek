@@ -55,3 +55,4 @@ mkdir zeekctl
 ln -s /opt/zeek/bin ./zeekctl /usr/bin/zeekctl
 cd /opt/zeek/bin
 ./zkg install zeek-af_packet-plugin
+./zeekctl start
