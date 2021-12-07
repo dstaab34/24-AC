@@ -51,7 +51,10 @@ NEXT, we will connect a repository and download CentOS packages and Elastic.
 13. yum repo-pkgs local-updates install --skip-broken (if prompted, press 'y')
 14. yum repo-pkgs local-centosplus install --skip-broken (if prompted, press 'y')
 
-**Run the following commands in a terminal after using Winscp to transfer over the splunk rpm from the infrax laptop. **
+**Run the following commands in a terminal after using Winscp to transfer over the splunkcpt tgz from the infrax laptop. **
+mkdir /opt/splunk 
+cd /opt/splunk
+tar -xvf <splunk cpt package>
 cd /opt/splunk/bin
 ./splunk start
 *when prompted, enter the user as admin and the password as Br111ckSquad!!!*
@@ -62,5 +65,6 @@ chown -R splunk:splunk splunk
 
 navigate to 'http://10.1.x.50:8000' where 'x' is the kit subnet number
 log in and click on apps > manage apps > Upload apps
-Upload apps from the files you've been using to install all TA's and apps on the Splunk Sensor. (CPT package will not work)
-Select settings > advanced search > search macros >
+Upload apps from the files you've been using to install all TA's and apps on the Splunk Sensor. 
+Select settings > advanced search > search macros > search all macros under "Created by" for the apt falconer app. make sure each index exists. save and restart splunk searchhead
+
